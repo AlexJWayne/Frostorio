@@ -6,5 +6,5 @@
   "author": "Alex Wayne",
   "description": "Brrrrrrrrrrbrrrbbrrrbrbbrrr...",
   "homepage": "",
-  "dependencies": ["base"]
+  "dependencies": ["base", "alien-biomes"]
 }
