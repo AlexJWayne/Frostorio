@@ -10,7 +10,7 @@ data:extend(
       max_health = 500,
       corpse = "big-remnants",
       consumption = "1MW", -- how quickly it burns fuel
-      neighbour_bonus = 1,
+      neighbour_bonus = 0,
       burner = {
         fuel_category = "chemical",
         effectivity = 1,
@@ -83,7 +83,7 @@ data:extend(
       },
       light = {intensity = 0.6, size = 9.9, shift = {0.0, 0.0}, color = {r = 0.0, g = 1.0, b = 0.0}},
       heat_buffer = {
-        max_temperature = 500,
+        max_temperature = 200,
         specific_heat = "250KJ", -- how much energy it takes to increase temperature one degree.
         max_transfer = "10MW",
         connections = {}
@@ -146,55 +146,7 @@ data:extend(
           shift = util.by_pixel(-72.5, 0)
         }
       },
-      vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
-      meltdown_action = {
-        type = "direct",
-        action_delivery = {
-          type = "instant",
-          target_effects = {
-            {
-              repeat_count = 100,
-              type = "create-trivial-smoke",
-              smoke_name = "nuclear-smoke",
-              offset_deviation = {{-1, -1}, {1, 1}},
-              slow_down_factor = 1,
-              starting_frame = 3,
-              starting_frame_deviation = 5,
-              starting_frame_speed = 0,
-              starting_frame_speed_deviation = 5,
-              speed_from_center = 0.5,
-              speed_deviation = 0.2
-            },
-            {
-              type = "create-entity",
-              entity_name = "explosion"
-            },
-            {
-              type = "damage",
-              damage = {amount = 400, type = "explosion"}
-            },
-            {
-              type = "create-entity",
-              entity_name = "small-scorchmark",
-              check_buildability = true
-            },
-            {
-              type = "nested-result",
-              action = {
-                type = "area",
-                target_entities = false,
-                repeat_count = 2000,
-                radius = 35,
-                action_delivery = {
-                  type = "projectile",
-                  projectile = "atomic-bomb-wave",
-                  starting_speed = 0.5
-                }
-              }
-            }
-          }
-        }
-      }
+      vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65}
     }
   }
 )
