@@ -78,13 +78,9 @@ function melt_and_freeze_tiles()
       end
     end
 
-    -- cool entities
+    -- Cool down entities.
     if entity then
-      if entity.temperature > -50 then
-        entity.temperature = entity.temperature - config.cooling_per_second / 60
-      elseif entity.temperature ~= -50 then
-        entity.temperature = -50
-      end
+      entity.temperature = entity.temperature - config.cooling_per_second / 60
     end
   end
 end
