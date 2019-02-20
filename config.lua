@@ -11,7 +11,7 @@ return {
     "frozen-snow-8",
     "frozen-snow-9"
   },
-  fps = 5,
-  melt_tiles_per_second = 1,
-  cooling_per_second = 0.5
+  melt_tiles_per_second = 4,
+  freeze_tiles_per_second = 2,
+  cooling_per_second = 0.75
 }

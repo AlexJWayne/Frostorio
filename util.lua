@@ -1,5 +1,6 @@
 local util = {}
 
+-- Return all tiles in the specified radius from position, sorted by closest first.
 function util.get_tiles_near(position, radius)
   local area = {
     left_top = {position.x - radius, position.y - radius},
@@ -31,10 +32,17 @@ function util.get_tiles_near(position, radius)
   return result
 end
 
+-- Sqaured distance, fast, for distance comparisons.
 function util.sq_distance(a, b)
   return math.pow(a.x - b.x, 2) + math.pow(a.y - b.y, 2)
 end
 
+-- Distance between 2 positions.
+function util.distance(a, b)
+  return math.sqrt(math.pow(a.x - b.x, 2) + math.pow(a.y - b.y, 2))
+end
+
+-- Check for presence of a value `val` in table `tab`.
 function util.has_value(tab, val)
   for index, value in ipairs(tab) do
     if value == val then
