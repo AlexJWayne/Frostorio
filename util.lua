@@ -42,15 +42,31 @@ function util.distance(a, b)
   return math.sqrt(math.pow(a.x - b.x, 2) + math.pow(a.y - b.y, 2))
 end
 
--- Check for presence of a value `val` in table `tab`.
-function util.has_value(tab, val)
-  for index, value in ipairs(tab) do
+-- Check for presence of a value `val` in table `tbl`.
+function util.has_value(tbl, val)
+  for index, value in ipairs(tbl) do
     if value == val then
       return true
     end
   end
 
   return false
+end
+
+function util.map(tbl, f)
+  local t = {}
+  for k, v in pairs(tbl) do
+    t[k] = f(v)
+  end
+  return t
+end
+
+function util.count(tbl)
+  local count = 0
+  for _ in pairs(tbl) do
+    count = count + 1
+  end
+  return count
 end
 
 return util

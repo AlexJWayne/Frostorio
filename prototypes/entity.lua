@@ -9,7 +9,7 @@ data:extend(
       minable = {mining_time = 1.5, result = "basic-heater"},
       max_health = 500,
       corpse = "big-remnants",
-      consumption = "1MW", -- how quickly it burns fuel
+      consumption = "10MW", -- how quickly it burns fuel
       neighbour_bonus = 0,
       burner = {
         fuel_category = "chemical",

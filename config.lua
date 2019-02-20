@@ -11,7 +11,17 @@ return {
     "frozen-snow-8",
     "frozen-snow-9"
   },
-  melt_tiles_per_second = 6,
-  freeze_tiles_per_second = 2,
-  cooling_per_second = 0.75
+  heat_state_names = {
+    "frozen-snow-0",
+    "frozen-snow-2",
+    "frozen-snow-4",
+    "frozen-snow-5",
+    "frozen-snow-6",
+    "dirt-2"
+  },
+  tile_rate = {
+    heat = 2 / 60 * 100,
+    cool = -1 / 60 * 100
+  },
+  entity_cooling = -0.75 / 60
 }
